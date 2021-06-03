@@ -1,9 +1,9 @@
 import java.util.Arrays;
-import java.math.BigInteger;
+// import java.math.BigInteger;
 import java.io.*;
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+// import java.util.Objects;
+// import java.util.Scanner;
+// import java.util.StringTokenizer;
 
 public class mathMagical {
 
@@ -11,8 +11,6 @@ public class mathMagical {
     //finding cards by their int representation
     public static String[] deck() {
         String[] deck = new String[54];
-        //char num;
-        String num;
         int i;
         int count;
 
@@ -159,7 +157,7 @@ public class mathMagical {
     static int findOrder(int[] shift) {
         int count = 0;
         int[] storage = new int[7];
-        int[] answer = new int[7];
+        // int[] answer = new int[7];
         int x1, x2, x3, x4, x5, x6, x7;
 
         // x1
@@ -291,7 +289,7 @@ public class mathMagical {
         int arraySize = 3;
         int[] storage = new int[arraySize];
         int[] answer = new int[arraySize];
-        int x1, x2, x3, x4, x5, x6, x7, x8;
+        int x1, x2, x3;//, x4, x5, x6, x7, x8;
         //comment out loops to number of terms (n)
 
         // x1
@@ -365,7 +363,7 @@ public class mathMagical {
         int[] base = new int[7];
         int[] correctOrder = new int[7];
         int[] temp = new int[7];
-        String[] baseStr = new String[7];
+        // String[] baseStr = new String[7];
         String[] correctOrderStr = new String[7];
 
         temp[0] = cardOne;
