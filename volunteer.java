@@ -67,15 +67,8 @@ public class volunteer {
 
       System.out.print(hiddenCard1+", "); 
 
-<<<<<<< Updated upstream
-      System.out.println("Hidden card "+i+" = "+hiddenCard2); 
-<<<<<<< HEAD
-=======
       System.out.print(hiddenCard2+"\n"); 
       
->>>>>>> Stashed changes
-=======
       
->>>>>>> 7da3da72989e3f2234c4f9980eabe4919b749aa5
    }
 }
