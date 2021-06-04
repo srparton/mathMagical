@@ -21,25 +21,24 @@ public class volunteer {
       hiddenCard1 = drawnCard.nextLine();
       hiddenCard2 = drawnCard.nextLine();
 
-      int i = 1;
-      System.out.println("card "+i+" = "+card1); 
-      i++;
+      System.out.println("Remember, These are you cards:");
+      System.out.print(card1+", "); 
 
-      System.out.println("card "+i+" = "+card2); 
-      i++;
+      System.out.print(card2+", "); 
 
-      System.out.println("card "+i+" = "+card3); 
-      i++;
+      System.out.print(card3+", "); 
 
-      System.out.println("card "+i+" = "+card4); 
-      i++;
+      System.out.print(card4+", "); 
 
-      System.out.println("card "+i+" = "+card5); 
-      i = 1;
+      System.out.print(card5+", "); 
 
-      System.out.println("Hidden card "+i+" = "+hiddenCard1); 
-      i++;
+      System.out.print(hiddenCard1+", "); 
 
+<<<<<<< Updated upstream
       System.out.println("Hidden card "+i+" = "+hiddenCard2); 
+=======
+      System.out.print(hiddenCard2+"\n"); 
+      
+>>>>>>> Stashed changes
    }
 }
