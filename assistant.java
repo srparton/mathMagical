@@ -1,5 +1,5 @@
 public class assistant {
-    public static /*String[]*/void assist(String c1, String c2, String c3, String c4, String c5, String c6, String c7, String hiddenOne, String hiddenTwo){
+    public static String[]/*void*/ assist(String c1, String c2, String c3, String c4, String c5, String c6, String c7, String hiddenOne, String hiddenTwo){
 
         String[] newDeck = cardFunctions.deck();
         int cardOne = cardFunctions.cardValue(c1, newDeck); 
@@ -58,5 +58,7 @@ public class assistant {
         System.out.println("Correct Sequence: "+correctOrderStr[0]+", "+correctOrderStr[1]+", "+correctOrderStr[2]+
                 ", "+correctOrderStr[3]+", "+correctOrderStr[4]+", "+correctOrderStr[5]+
                 ", "+correctOrderStr[6]+"");
+
+        return correctOrderStr;
     }
 }

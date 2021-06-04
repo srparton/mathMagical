@@ -3,8 +3,8 @@ public class magician {
     public static void magic(String c1, String c2, String c3, String c4, String c5, String c6, String c7) {
     // public static void magician(String c1, String c2, String c3, String c4, String c5, String c6, String c7) {
     
-        System.out.println("First Card = "+c1);
-        System.out.println("Last Card = "+c7);
+        // System.out.println("First Card = "+c1);
+        // System.out.println("Last Card = "+c7);
         String[] newDeck = cardFunctions.deck();
         int cardOne = cardFunctions.cardValue(c1, newDeck); 
         int cardTwo = cardFunctions.cardValue(c2, newDeck); 
