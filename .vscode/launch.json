@@ -6,11 +6,17 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch with Arguments Prompt",
+            "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "mathMagical",
-            "args": "'Club 7' 'Diamond 3' 'Diamond 4' 'Spade 10' 'Heart J' 'Spade 3' 'Spade 5'"
+            "mainClass": "${file}"
         }
+        // {
+        //     "type": "java",
+        //     "name": "Launch with Arguments Prompt",
+        //     "request": "launch",
+        //     "mainClass": "mathMagical",
+        //     "args": "'Club 7' 'Diamond 3' 'Diamond 4' 'Spade 10' 'Heart J' 'Spade 3' 'Spade 5'"
+        // }
         // {
         //     "type": "java",
         //     "name": "Launch mathMagical",
