@@ -1,16 +1,17 @@
 public class assistant {
     public static String[]/*void*/ assist(String c1, String c2, String c3, String c4, String c5, String c6, String c7, String hiddenOne, String hiddenTwo){
-
-        String[] newDeck = cardFunctions.deck();
-        int cardOne = cardFunctions.cardValue(c1, newDeck); 
-        int cardTwo = cardFunctions.cardValue(c2, newDeck); 
-        int cardThree = cardFunctions.cardValue(c3, newDeck); 
-        int cardFour = cardFunctions.cardValue(c4, newDeck); 
-        int cardFive = cardFunctions.cardValue(c5, newDeck); 
-        int cardSix = cardFunctions.cardValue(c6, newDeck); 
-        int cardSeven = cardFunctions.cardValue(c7, newDeck); 
-        int hidOne = cardFunctions.cardValue(hiddenOne, newDeck);
-        int hidTwo = cardFunctions.cardValue(hiddenTwo, newDeck);
+/* Print out the c* values and figure out what is being passed in. Card value keeps being 99 :( */
+        // String[] /* newDeck */ = cardFunctions.deck();
+        // System.out.println("c1 = "+c1);
+        int cardOne = cardFunctions.cardValue(c1 /* newDeck */); 
+        int cardTwo = cardFunctions.cardValue(c2 /* newDeck */); 
+        int cardThree = cardFunctions.cardValue(c3 /* newDeck */); 
+        int cardFour = cardFunctions.cardValue(c4 /* newDeck */); 
+        int cardFive = cardFunctions.cardValue(c5 /* newDeck */); 
+        int cardSix = cardFunctions.cardValue(c6 /* newDeck */); 
+        int cardSeven = cardFunctions.cardValue(c7 /* newDeck */); 
+        int hidOne = cardFunctions.cardValue(hiddenOne /* newDeck */);
+        int hidTwo = cardFunctions.cardValue(hiddenTwo /* newDeck */);
         int order;
         int min = 99;
         int minIndex = -1;
@@ -51,13 +52,13 @@ public class assistant {
         for(int j=0; j<base.length; j++){
             for(int i = 0; i<correctOrder.length; i++){
                 if(i+1 == correctOrder[j]) {
-                    correctOrderStr[j] = cardFunctions.cardNumber(base[i],newDeck);
+                    correctOrderStr[j] = cardFunctions.cardNumber(base[i]/* ,newDeck */);
                 }
             }
         }
-        System.out.println("Correct Sequence: "+correctOrderStr[0]+", "+correctOrderStr[1]+", "+correctOrderStr[2]+
-                ", "+correctOrderStr[3]+", "+correctOrderStr[4]+", "+correctOrderStr[5]+
-                ", "+correctOrderStr[6]+"");
+        // System.out.println("Correct Sequence: "+correctOrderStr[0]+", "+correctOrderStr[1]+", "+correctOrderStr[2]+
+        //         ", "+correctOrderStr[3]+", "+correctOrderStr[4]+", "+correctOrderStr[5]+
+        //         ", "+correctOrderStr[6]+"");
 
         return correctOrderStr;
     }

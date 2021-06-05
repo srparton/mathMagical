@@ -6,13 +6,13 @@ public class magician {
         // System.out.println("First Card = "+c1);
         // System.out.println("Last Card = "+c7);
         String[] newDeck = cardFunctions.deck();
-        int cardOne = cardFunctions.cardValue(c1, newDeck); 
-        int cardTwo = cardFunctions.cardValue(c2, newDeck); 
-        int cardThree = cardFunctions.cardValue(c3, newDeck); 
-        int cardFour = cardFunctions.cardValue(c4, newDeck); 
-        int cardFive = cardFunctions.cardValue(c5, newDeck); 
-        int cardSix = cardFunctions.cardValue(c6, newDeck); 
-        int cardSeven = cardFunctions.cardValue(c7, newDeck); 
+        int cardOne = cardFunctions.cardValue(c1/* , newDeck */); 
+        int cardTwo = cardFunctions.cardValue(c2/* , newDeck */); 
+        int cardThree = cardFunctions.cardValue(c3/* , newDeck */); 
+        int cardFour = cardFunctions.cardValue(c4/* , newDeck */); 
+        int cardFive = cardFunctions.cardValue(c5/* , newDeck */); 
+        int cardSix = cardFunctions.cardValue(c6/* , newDeck */); 
+        int cardSeven = cardFunctions.cardValue(c7/* , newDeck */); 
         int order;
         int[] base = new int[7];
         int[] realCase = new int[7];
@@ -21,7 +21,7 @@ public class magician {
         int minIndex = -1;
         String[] answer;
     
-        System.out.println("cardOne = "+cardOne);
+        // System.out.println("cardOne = "+cardOne);
         realCase[0] = temp[0] = cardOne;
         realCase[1] = temp[1] = cardTwo;
         realCase[2] = temp[2] = cardThree;
@@ -63,9 +63,9 @@ public class magician {
         order = cardFunctions.findOrder(temp);
         //System.out.println("answer = "+ order);
         answer = cardFunctions.hiddenCards(order);
-        System.out.println("Based off your cards: "+c1+", "+c2+", "+c3+", "+c4+", "+c5+", "+c6+", "+c7);
-        System.out.println();
-        System.out.println("Your hidden cards should be: ");
+        // System.out.println("Based off your cards: "+c1+", "+c2+", "+c3+", "+c4+", "+c5+", "+c6+", "+c7);
+        // System.out.println();
+        System.out.println("Based off your cards, your hidden cards should be: ");
         System.out.print(answer[0]);
         System.out.println(" "+answer[1]);
     

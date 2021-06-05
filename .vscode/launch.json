@@ -12,11 +12,11 @@
             "mainClass": "${file}"
         }
         // {
-            // "type": "java",
-            // "name": "Launch with Arguments Prompt",
-            // "request": "launch",
-            // "mainClass": "mathMagical",
-            // "args": "'Club K' 'spade A' 'Club Q' 'Diamond 3' 'Diamond 4' 'Heart 9' 'Heart 4'"
+        //     "type": "java",
+        //     "name": "Launch with Arguments Prompt",
+        //     "request": "launch",
+        //     "mainClass": "volunteer",
+        //     "args": "'Club K' 'Spade A' 'Club Q' 'Diamond 3' 'Diamond 4' 'Heart 9' 'Heart 4' 'Club A' 'Diamond 6'"
         // }
         // {
         //     "type": "java",
