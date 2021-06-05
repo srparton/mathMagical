@@ -11,8 +11,8 @@ public class cardFunctions {
         int cardTwo = (orderValue%54);
         int cardOne = ((orderValue-cardTwo)/54)+1;
     
-        hiddenCards[0] = cardNumber(cardOne, deck());
-        hiddenCards[1] = cardNumber(cardTwo, deck());
+        hiddenCards[0] = cardNumber(cardOne/* , deck() */);
+        hiddenCards[1] = cardNumber(cardTwo/* , deck() */);
     
         return hiddenCards;
     }
@@ -239,10 +239,11 @@ public class cardFunctions {
         }
 
         //This will return the int representation of the card.
-        public static int cardValue(String card, String[] myDeck) {
+        public static int cardValue(String card/* , String[] myDeck */) {
             // System.out.println("Card Value From cardFunctions.cardValue = "+ card);
             // System.out.println("value of first card on deck = "+myDeck[0]);
             // System.out.println("deck card length = " + myDeck[0].length());
+            String[] myDeck = deck();
             boolean myCard = false;
             int myCardValue = 99;
             int i = 0;
@@ -255,10 +256,14 @@ public class cardFunctions {
                 } 
                 i++;
             }
+            if (myCardValue == 99){
+                throw new ArithmeticException("Card Value is not in Range");
+            }
             return myCardValue; 
         }
 
-        public static String cardNumber(int card, String[] myDeck){
+        public static String cardNumber(int card/* , String[] myDeck */){
+            String[] myDeck = deck();
             return myDeck[card-1];
         }
 

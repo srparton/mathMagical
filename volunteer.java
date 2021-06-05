@@ -2,73 +2,129 @@
 import java.util.Scanner;
 
 public class volunteer {
-   public static void main(String args[]) {
 
-      
-      //This method will be what asks the user for input 
-      String card1, card2, card3, card4, card5, hiddenCard1, hiddenCard2, end;
-      Scanner drawnCard = new Scanner(System.in);
+      public static String formatCard(String card) {
+            String end = "";
+            card = card.substring(0, 1).toUpperCase() + card.substring(1).toLowerCase();
+            end = card.substring((card.length() - 1)).toUpperCase();
+            card = card.substring(0, card.length() - 1) + end;
 
-      System.out.println("Please Draw/Choose 5 Cards");
-      card1 = drawnCard.nextLine();
-      // System.out.println("card 1 = " + card1); 
-      card2 = drawnCard.nextLine();
-      card3 = drawnCard.nextLine();
-      card4 = drawnCard.nextLine();
-      card5 = drawnCard.nextLine();
-      
+            return card;
+      }
 
-      System.out.println("\nNow Choose 2 cards to be the Hidden Cards.\nThese will be what the magician nees to guess\n");
+      public static boolean realCard(String card) {
+            String suite, value;
+            boolean isRealCard = false;
+            suite = card.substring(0,(card.length()-2));
+            value = card.substring(card.length()-1);
+            // System.out.println("        suite = "+suite);
+            // System.out.println("        value = "+value);
+            // System.out.println("        values length = "+value.length());
+            if ((suite.equals("Club")||suite.equals("Spade")||
+                suite.equals("Heart") || suite.equals("Diamond")) && 
+                (value.matches("[2-9]")|| value.matches("[JQKA]"))){
+                  isRealCard = true;
+            }
+            return isRealCard;
+      }
 
-      hiddenCard1 = drawnCard.nextLine();
-      hiddenCard2 = drawnCard.nextLine();
-      
+      public static String[] Volunteer() {
+            String[] assistant = new String[9];
+            
+            // This method will be what asks the user for input
+            String card1, card2, card3, card4, card5, card6, card7, hiddenCard1, hiddenCard2, end;
+            Scanner drawnCard = new Scanner(System.in);
+            
+            System.out.println("Please Draw/Choose 7 Cards");
+            System.out.print("Card 1 = ");
+            card1 = formatCard(drawnCard.nextLine());
+            while(!realCard(card1)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 1 = ");
+                  card1 = formatCard(drawnCard.nextLine());
+            }
 
-      //Ensure the case of the card is corret
-      card1 = card1.substring(0,1).toUpperCase() + card1.substring(1).toLowerCase();
-      end = card1.substring((card1.length() - 1)).toUpperCase();
-      card1 = card1.substring(0,card1.length()-1) + end;
-      
-      card2 = card2.substring(0,1).toUpperCase() + card2.substring(1).toLowerCase();
-      end = card2.substring((card2.length() - 1)).toUpperCase();
-      card2 = card2.substring(0,card2.length()-1) + end;
+            System.out.print("Card 2 = ");
+            card2 = formatCard(drawnCard.nextLine());
+            while(!realCard(card2)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 2 = ");
+                  card2 = formatCard(drawnCard.nextLine());
+            }
 
-      card3 = card3.substring(0,1).toUpperCase() + card3.substring(1).toLowerCase();
-      end = card3.substring((card3.length() - 1)).toUpperCase();
-      card3 = card3.substring(0,card3.length()-1) + end;
+            System.out.print("Card 3 = ");
+            card3 = formatCard(drawnCard.nextLine());
+            while(!realCard(card3)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 3 = ");
+                  card3 = formatCard(drawnCard.nextLine());
+            }
 
-      card4 = card4.substring(0,1).toUpperCase() + card4.substring(1).toLowerCase();
-      end = card4.substring((card4.length() - 1)).toUpperCase();
-      card4 = card4.substring(0,card4.length()-1) + end;
+            System.out.print("Card 4 = ");
+            card4 = formatCard(drawnCard.nextLine());
+            while(!realCard(card4)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 4 = ");
+                  card4 = formatCard(drawnCard.nextLine());
+            }
 
-      card5 = card5.substring(0,1).toUpperCase() + card5.substring(1).toLowerCase();
-      end = card5.substring((card5.length() - 1)).toUpperCase();
-      card5 = card5.substring(0,card5.length()-1) + end;
+            System.out.print("Card 5 = ");
+            card5 = formatCard(drawnCard.nextLine());
+            while(!realCard(card5)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 5 = ");
+                  card5 = formatCard(drawnCard.nextLine());
+            }
 
-      hiddenCard1 = hiddenCard1.substring(0,1).toUpperCase() + hiddenCard1.substring(1).toLowerCase();
-      end = hiddenCard1.substring((hiddenCard1.length() - 1)).toUpperCase();
-      hiddenCard1 = hiddenCard1.substring(0,hiddenCard1.length()-1) + end;
+            System.out.print("Card 6 = ");
+            card6 = formatCard(drawnCard.nextLine());
+            while(!realCard(card6)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 6 = ");
+                  card6 = formatCard(drawnCard.nextLine());
+            }
 
-      hiddenCard2 = hiddenCard2.substring(0,1).toUpperCase() + hiddenCard2.substring(1).toLowerCase();
-      end = hiddenCard2.substring((hiddenCard2.length() - 1)).toUpperCase();
-      hiddenCard2 = hiddenCard2.substring(0,hiddenCard2.length()-1) + end;
+            System.out.print("Card 7 = ");
+            card7 = formatCard(drawnCard.nextLine());
+            while(!realCard(card7)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 7 = ");
+                  card7 = formatCard(drawnCard.nextLine());
+            }
+            
+            System.out.println("\nNow Choose 2 cards to be the Hidden Cards.\nThese will be what the magician needs to guess\n");
+            System.out.print("Hidden Card 1 = ");
+            hiddenCard1 = formatCard(drawnCard.nextLine());
+            while(!realCard(hiddenCard1)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Hidden Card 1 = ");
+                  hiddenCard1 = formatCard(drawnCard.nextLine());
+            }
 
+            System.out.print("Hidden Card 2 = ");
+            hiddenCard2 = formatCard(drawnCard.nextLine());
+            while(!realCard(hiddenCard2)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Hidden Card 2 = ");
+                  hiddenCard2 = formatCard(drawnCard.nextLine());
+            }
 
-      System.out.println("Remember, These are you cards:");
-      System.out.print(card1+", "); 
+            System.out.println("\nRemember, These are you cards:");
+            System.out.println(card1 + ", "
+            +card2 + ", "+ card3 + ", "+ card4 + ", "
+            +card5 + ", "+ card6 + ", "+ card7 + ", " 
+            +"*"+hiddenCard1 + ", " +"*"+hiddenCard2 + "\n");
+            
+            assistant[0] = card1;
+            assistant[1] = card2;
+            assistant[2] = card3;
+            assistant[3] = card4;
+            assistant[4] = card5;
+            assistant[5] = card6;
+            assistant[6] = card7;
+            assistant[7] = hiddenCard1;
+            assistant[8] = hiddenCard2;
 
-      System.out.print(card2+", "); 
-
-      System.out.print(card3+", "); 
-
-      System.out.print(card4+", "); 
-
-      System.out.print(card5+", "); 
-
-      System.out.print(hiddenCard1+", "); 
-
-      System.out.print(hiddenCard2+"\n"); 
-      
-      
-   }
+            return assistant;
+      }
 }
