@@ -1,5 +1,3 @@
-import java.io.*;
-
 public class mathMagical{ 
     public static void main(String[] args) {
 

@@ -5,7 +5,6 @@ public class magician {
     
         // System.out.println("First Card = "+c1);
         // System.out.println("Last Card = "+c7);
-        String[] newDeck = cardFunctions.deck();
         int cardOne = cardFunctions.cardValue(c1/* , newDeck */); 
         int cardTwo = cardFunctions.cardValue(c2/* , newDeck */); 
         int cardThree = cardFunctions.cardValue(c3/* , newDeck */); 
