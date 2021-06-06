@@ -28,11 +28,92 @@ public class volunteer {
             return isRealCard;
       }
 
-      public static String[] Volunteer() {
+      public static String[] chooseCardsMagician() {
+            String[] magician = new String[7];
+            
+            // This method will be what asks the user for input
+            String card1, card2, card3, card4, card5, card6, card7;
+            Scanner drawnCard = new Scanner(System.in);
+            
+            System.out.println("Oh great magician, what cards to you see going from left to right?");
+            System.out.println("Type in the cards one at a time beginning with the first card:");
+            System.out.print("Card 1 = ");
+            card1 = formatCard(drawnCard.nextLine());
+            while(!realCard(card1)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 1 = ");
+                  card1 = formatCard(drawnCard.nextLine());
+            }
+
+            System.out.print("Card 2 = ");
+            card2 = formatCard(drawnCard.nextLine());
+            while(!realCard(card2)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 2 = ");
+                  card2 = formatCard(drawnCard.nextLine());
+            }
+
+            System.out.print("Card 3 = ");
+            card3 = formatCard(drawnCard.nextLine());
+            while(!realCard(card3)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 3 = ");
+                  card3 = formatCard(drawnCard.nextLine());
+            }
+
+            System.out.print("Card 4 = ");
+            card4 = formatCard(drawnCard.nextLine());
+            while(!realCard(card4)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 4 = ");
+                  card4 = formatCard(drawnCard.nextLine());
+            }
+
+            System.out.print("Card 5 = ");
+            card5 = formatCard(drawnCard.nextLine());
+            while(!realCard(card5)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 5 = ");
+                  card5 = formatCard(drawnCard.nextLine());
+            }
+
+            System.out.print("Card 6 = ");
+            card6 = formatCard(drawnCard.nextLine());
+            while(!realCard(card6)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 6 = ");
+                  card6 = formatCard(drawnCard.nextLine());
+            }
+
+            System.out.print("Card 7 = ");
+            card7 = formatCard(drawnCard.nextLine());
+            while(!realCard(card7)){
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card 7 = ");
+                  card7 = formatCard(drawnCard.nextLine());
+            }
+
+            System.out.println("\nBased off these cards: ");
+            System.out.println(card1 + ", "
+            +card2 + ", "+ card3 + ", "+ card4 + ", "
+            +card5 + ", "+ card6 + ", "+ card7 +"\n");
+            
+            magician[0] = card1;
+            magician[1] = card2;
+            magician[2] = card3;
+            magician[3] = card4;
+            magician[4] = card5;
+            magician[5] = card6;
+            magician[6] = card7;
+
+            return magician;
+      }
+
+      public static String[] chooseCardsAssistant() {
             String[] assistant = new String[9];
             
             // This method will be what asks the user for input
-            String card1, card2, card3, card4, card5, card6, card7, hiddenCard1, hiddenCard2, end;
+            String card1, card2, card3, card4, card5, card6, card7, hiddenCard1, hiddenCard2;
             Scanner drawnCard = new Scanner(System.in);
             
             System.out.println("Please Draw/Choose 7 Cards");

@@ -10,6 +10,9 @@ public class cardFunctions {
         String[] hiddenCards= new String[2];
         int cardTwo = (orderValue%54);
         int cardOne = ((orderValue-cardTwo)/54)+1;
+
+        // System.out.println("Card One Int Value = "+cardOne);
+        // System.out.println("Card Two Int Value = "+cardTwo);
     
         hiddenCards[0] = cardNumber(cardOne/* , deck() */);
         hiddenCards[1] = cardNumber(cardTwo/* , deck() */);
