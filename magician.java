@@ -64,7 +64,7 @@ public class magician {
         answer = cardFunctions.hiddenCards(order);
         // System.out.println("Based off your cards: "+c1+", "+c2+", "+c3+", "+c4+", "+c5+", "+c6+", "+c7);
         // System.out.println();
-        System.out.println("Based off your cards, your hidden cards should be: ");
+        System.out.println("Your hidden cards should be: ");
         System.out.print(answer[0]);
         System.out.println(" "+answer[1]);
     

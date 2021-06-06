@@ -1,5 +1,5 @@
 public class assistant {
-    public static String[]/*void*/ assist(String c1, String c2, String c3, String c4, String c5, String c6, String c7, String hiddenOne, String hiddenTwo){
+    public static /* String[] */void assist(String c1, String c2, String c3, String c4, String c5, String c6, String c7, String hiddenOne, String hiddenTwo){
 /* Print out the c* values and figure out what is being passed in. Card value keeps being 99 :( */
         // String[] /* newDeck */ = cardFunctions.deck();
         // System.out.println("c1 = "+c1);
@@ -56,10 +56,11 @@ public class assistant {
                 }
             }
         }
-        // System.out.println("Correct Sequence: "+correctOrderStr[0]+", "+correctOrderStr[1]+", "+correctOrderStr[2]+
-        //         ", "+correctOrderStr[3]+", "+correctOrderStr[4]+", "+correctOrderStr[5]+
-        //         ", "+correctOrderStr[6]+"");
+        System.out.println("To be a good assistant you should lay out the cards like so:\n"
+                +correctOrderStr[0]+", "+correctOrderStr[1]+", "+correctOrderStr[2]+
+                ", "+correctOrderStr[3]+", "+correctOrderStr[4]+", "+correctOrderStr[5]+
+                ", "+correctOrderStr[6]+"");
 
-        return correctOrderStr;
+        // return correctOrderStr;
     }
 }

@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         
-        {
-            "type": "java",
-            "name": "Launch Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        }
+        // {
+        //     "type": "java",
+        //     "name": "Launch Current File",
+        //     "request": "launch",
+        //     "mainClass": "${file}"
+        // }
         // {
         //     "type": "java",
         //     "name": "Launch with Arguments Prompt",
@@ -18,12 +18,12 @@
         //     "mainClass": "volunteer",
         //     "args": "'Club K' 'Spade A' 'Club Q' 'Diamond 3' 'Diamond 4' 'Heart 9' 'Heart 4' 'Club A' 'Diamond 6'"
         // }
-        // {
-        //     "type": "java",
-        //     "name": "Launch mathMagical",
-        //     "request": "launch",
-        //     "mainClass": "mathMagical",
-        //     "projectName": "mathMagical_f23aa0a4"
-        // }
+        {
+            "type": "java",
+            "name": "Launch mathMagical",
+            "request": "launch",
+            "mainClass": "mathMagical",
+            "projectName": "mathMagical_f23aa0a4"
+        }
     ]
 }
