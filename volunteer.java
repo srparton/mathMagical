@@ -4,21 +4,26 @@ import java.util.Scanner;
 public class volunteer {
 
       public static String formatCard(String card) {
-            String end = "";
-            card = card.substring(0, 1).toUpperCase() + card.substring(1).toLowerCase();
-            end = card.substring((card.length() - 1)).toUpperCase();
-            card = card.substring(0, card.length() - 1) + end;
-
+            // check for empty value. Issue will be stopped fully by realCard
+            //    this will just skip over the formatting process to avoid error.
+            if (card.equals("")) return card;
+                  String end = "";
+                  card = card.substring(0, 1).toUpperCase() + card.substring(1).toLowerCase();
+                  end = card.substring((card.length() - 1)).toUpperCase();
+                  card = card.substring(0, card.length() - 1) + end;
             return card;
       }
 
       public static boolean realCard(String card) {
             boolean isRealCard = false;
-            if (card.equals("Joker") || card.equals("joker")) {
-                  isRealCard = true;
+            //Check if card value is null. If so return false. 
+            if (card.equals("")) return isRealCard;
+            if (card.equals("Small Joker")|| card.equals("Big Joker")) {
+                  return isRealCard = true;
             }
             else{
                   String whole[] = card.split(" ");
+                  if(whole.length <= 1 ) return isRealCard;
                   String suite = whole[0];
                   String value = whole[1];
                   // suite = card.substring(0,(card.length()-2));
@@ -31,6 +36,7 @@ public class volunteer {
                       (value.matches("[2-9]|1[0]")/* || value.equals("10")  */|| value.matches("[JQKA]"))){
                         isRealCard = true;
                   }
+                  
             }
             return isRealCard;
       }
