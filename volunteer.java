@@ -7,10 +7,18 @@ public class volunteer {
             // check for empty value. Issue will be stopped fully by realCard
             //    this will just skip over the formatting process to avoid error.
             if (card.equals("")) return card;
-                  String end = "";
-                  card = card.substring(0, 1).toUpperCase() + card.substring(1).toLowerCase();
-                  end = card.substring((card.length() - 1)).toUpperCase();
-                  card = card.substring(0, card.length() - 1) + end;
+            
+            // System.out.println("card value in formatCard = "+card);
+            String whole[] = card.split(" ");
+            if(whole.length <= 1 ) return card;
+            String suite = whole[0];
+            String value = whole[1];
+
+            suite = suite.substring(0, 1).toUpperCase() + suite.substring(1).toLowerCase();
+            value = value.substring(0, 1).toUpperCase() + value.substring(1).toLowerCase();
+             card = suite + " " + value;
+            
+            // System.out.println("card value after formatting = "+card);
             return card;
       }
 
@@ -26,11 +34,7 @@ public class volunteer {
                   if(whole.length <= 1 ) return isRealCard;
                   String suite = whole[0];
                   String value = whole[1];
-                  // suite = card.substring(0,(card.length()-2));
-                  // value = card.substring(card.length()-1);
-                  // System.out.println("        suite = "+suite);
-                  // System.out.println("        value = "+value);
-                  // System.out.println("        values length = "+value.length());
+
                   if ((suite.equals("Club")||suite.equals("Spade")||
                       suite.equals("Heart") || suite.equals("Diamond")) && 
                       (value.matches("[2-9]|1[0]")/* || value.equals("10")  */|| value.matches("[JQKA]"))){
