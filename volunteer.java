@@ -3,14 +3,15 @@ import java.util.Scanner;
 
 public class volunteer {
 
-      public static String addCard() {
+      public static String addCard(String cardNum) {
+           
             Scanner newCard = new Scanner(System.in);
             String card;
-            System.out.print("Please enter correct card: ");
             card = formatCard(newCard.nextLine());
             while (!realCard(card)) {
                   System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card = ");
+                  if(cardNum.equals("Hidden Card 1")|| cardNum.equals("Hidden Card 2")) System.out.print(cardNum + " = ");
+                  else System.out.print("Card " +cardNum+" = ");
                   card = formatCard(newCard.nextLine());
             }
             // newCard.close();
@@ -72,15 +73,15 @@ public class volunteer {
                         idiot++;
                         // System.out.println("idiot = "+idiot);
                   }
-                  if (input.equals("1")) theChoosen[0]= addCard();
-                  if (input.equals("2")) theChoosen[1]= addCard();
-                  if (input.equals("3")) theChoosen[2]= addCard();
-                  if (input.equals("4")) theChoosen[3]= addCard();
-                  if (input.equals("5")) theChoosen[4]= addCard();
-                  if (input.equals("6")) theChoosen[5]= addCard();
-                  if (input.equals("7")) theChoosen[6]= addCard();
-                  if (input.equals("8")) theChoosen[7]= addCard();
-                  if (input.equals("9")) theChoosen[8]= addCard();
+                  if (input.equals("1")) theChoosen[0]= addCard("1");
+                  if (input.equals("2")) theChoosen[1]= addCard("2");
+                  if (input.equals("3")) theChoosen[2]= addCard("3");
+                  if (input.equals("4")) theChoosen[3]= addCard("4");
+                  if (input.equals("5")) theChoosen[4]= addCard("5");
+                  if (input.equals("6")) theChoosen[5]= addCard("6");
+                  if (input.equals("7")) theChoosen[6]= addCard("7");
+                  if (input.equals("8")) theChoosen[7]= addCard("8");
+                  if (input.equals("9")) theChoosen[8]= addCard("9");
             }           
             
             System.out.print("Do any other changes need to be made? (Y/N) ");     
@@ -149,15 +150,13 @@ public class volunteer {
                         idiot++;
                         // System.out.println("idiot = "+idiot);
                   }
-                  if (input.equals("1")) theChoosen[0]= addCard();
-                  if (input.equals("2")) theChoosen[1]= addCard();
-                  if (input.equals("3")) theChoosen[2]= addCard();
-                  if (input.equals("4")) theChoosen[3]= addCard();
-                  if (input.equals("5")) theChoosen[4]= addCard();
-                  if (input.equals("6")) theChoosen[5]= addCard();
-                  if (input.equals("7")) theChoosen[6]= addCard();
-                  // if (input.equals("8")) theChoosen[7]= addCard();
-                  // if (input.equals("9")) theChoosen[8]= addCard();
+                  if (input.equals("1")) theChoosen[0]= addCard("1");
+                  if (input.equals("2")) theChoosen[1]= addCard("2");
+                  if (input.equals("3")) theChoosen[2]= addCard("3");
+                  if (input.equals("4")) theChoosen[3]= addCard("4");
+                  if (input.equals("5")) theChoosen[4]= addCard("5");
+                  if (input.equals("6")) theChoosen[5]= addCard("6");
+                  if (input.equals("7")) theChoosen[6]= addCard("7");
             }           
             
             System.out.print("Do any other changes need to be made? (Y/N) ");     
@@ -230,60 +229,25 @@ public class volunteer {
             System.out.println("Oh great magician, what cards to you see going from left to right?");
             System.out.println("Type in the cards one at a time beginning with the first card:\n");
             System.out.print("Card 1 = ");
-            card1 = formatCard(drawnCard.nextLine());
-            while (!realCard(card1)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 1 = ");
-                  card1 = formatCard(drawnCard.nextLine());
-            }
+            card1 = addCard("1");
 
             System.out.print("Card 2 = ");
-            card2 = formatCard(drawnCard.nextLine());
-            while (!realCard(card2)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 2 = ");
-                  card2 = formatCard(drawnCard.nextLine());
-            }
+            card2 = addCard("2");
 
             System.out.print("Card 3 = ");
-            card3 = formatCard(drawnCard.nextLine());
-            while (!realCard(card3)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 3 = ");
-                  card3 = formatCard(drawnCard.nextLine());
-            }
+            card3 = addCard("3");
 
             System.out.print("Card 4 = ");
-            card4 = formatCard(drawnCard.nextLine());
-            while (!realCard(card4)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 4 = ");
-                  card4 = formatCard(drawnCard.nextLine());
-            }
+            card4 = addCard("4");
 
             System.out.print("Card 5 = ");
-            card5 = formatCard(drawnCard.nextLine());
-            while (!realCard(card5)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 5 = ");
-                  card5 = formatCard(drawnCard.nextLine());
-            }
+            card5 = addCard("5");
 
             System.out.print("Card 6 = ");
-            card6 = formatCard(drawnCard.nextLine());
-            while (!realCard(card6)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 6 = ");
-                  card6 = formatCard(drawnCard.nextLine());
-            }
+            card6 = addCard("6");
 
             System.out.print("Card 7 = ");
-            card7 = formatCard(drawnCard.nextLine());
-            while (!realCard(card7)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 7 = ");
-                  card7 = formatCard(drawnCard.nextLine());
-            }
+            card7 = addCard("7");
 
             System.out.println("\nBased off these cards: ");
             System.out.println(card1 + ", " + card2 + ", " + card3 + ", " + card4 + ", " + card5 + ", " + card6 + ", "
@@ -313,85 +277,34 @@ public class volunteer {
             System.out.printf("\033c"); // clear screen
             System.out.println("Please Draw/Choose 7 Cards\n");
             System.out.print("Card 1 = ");
-            card1 = formatCard(drawnCard.nextLine());
-            while (!realCard(card1)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 1 = ");
-                  card1 = formatCard(drawnCard.nextLine());
-            }
+            card1 = addCard("1");
 
             System.out.print("Card 2 = ");
-            card2 = formatCard(drawnCard.nextLine());
-            while (!realCard(card2)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 2 = ");
-                  card2 = formatCard(drawnCard.nextLine());
-            }
+            card2 = addCard("2");
 
             System.out.print("Card 3 = ");
-            card3 = formatCard(drawnCard.nextLine());
-            while (!realCard(card3)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 3 = ");
-                  card3 = formatCard(drawnCard.nextLine());
-            }
+            card3 = addCard("3");
 
             System.out.print("Card 4 = ");
-            card4 = formatCard(drawnCard.nextLine());
-            while (!realCard(card4)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 4 = ");
-                  card4 = formatCard(drawnCard.nextLine());
-            }
+            card4 = addCard("4");
 
             System.out.print("Card 5 = ");
-            card5 = formatCard(drawnCard.nextLine());
-            while (!realCard(card5)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 5 = ");
-                  card5 = formatCard(drawnCard.nextLine());
-            }
+            card5 = addCard("5");
 
             System.out.print("Card 6 = ");
-            card6 = formatCard(drawnCard.nextLine());
-            while (!realCard(card6)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 6 = ");
-                  card6 = formatCard(drawnCard.nextLine());
-            }
+            card6 = addCard("6");
 
             System.out.print("Card 7 = ");
-            card7 = formatCard(drawnCard.nextLine());
-            while (!realCard(card7)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Card 7 = ");
-                  card7 = formatCard(drawnCard.nextLine());
-            }
+            card7 = addCard("7");
 
             System.out.println(
                         "\nNow Choose 2 cards to be the Hidden Cards.\nThese will be what the magician needs to guess\n");
             System.out.print("Hidden Card 1 = ");
-            hiddenCard1 = formatCard(drawnCard.nextLine());
-            while (!realCard(hiddenCard1)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Hidden Card 1 = ");
-                  hiddenCard1 = formatCard(drawnCard.nextLine());
-            }
+            hiddenCard1 = addCard("Hidden Card 1");
 
             System.out.print("Hidden Card 2 = ");
-            hiddenCard2 = formatCard(drawnCard.nextLine());
-            while (!realCard(hiddenCard2)) {
-                  System.out.println("Card Invalid Please try again\n");
-                  System.out.print("Hidden Card 2 = ");
-                  hiddenCard2 = formatCard(drawnCard.nextLine());
-            }
+            hiddenCard2 = addCard("Hidden Card 2");
 
-            /*
-             * System.out.println("\nRemember, These are you cards:");
-             * System.out.println(card1 + ", " +card2 + ", "+ card3 + ", "+ card4 + ", "
-             * +card5 + ", "+ card6 + ", "+ card7 + ", " +"*"+hiddenCard1 + ", "
-             * +"*"+hiddenCard2 + "\n");
-             */
             String[] picked = checkInput(card1, card2, card3, card4, card5, card6, card7, hiddenCard1, hiddenCard2);
             // System.out.println("Passing in picked");
             assistant.assist(picked[0], picked[1], picked[2], picked[3], picked[4], picked[5], picked[6], picked[7], picked[8]);
