@@ -1,8 +1,182 @@
-
 import java.util.Scanner;
+
 
 public class volunteer {
 
+      public static String addCard() {
+            Scanner newCard = new Scanner(System.in);
+            String card;
+            System.out.print("Please enter correct card: ");
+            card = formatCard(newCard.nextLine());
+            while (!realCard(card)) {
+                  System.out.println("Card Invalid Please try again\n");
+                  System.out.print("Card = ");
+                  card = formatCard(newCard.nextLine());
+            }
+            // newCard.close();
+            return card;
+      }
+
+      public static String[] checkInput(String c1,String c2,String c3,String c4,String c5,String c6,String c7,String c8,String c9) {
+            String[] theChoosen = new String[9];           
+            theChoosen[0] = c1;
+            theChoosen[1] = c2;
+            theChoosen[2] = c3;
+            theChoosen[3] = c4;
+            theChoosen[4] = c5;
+            theChoosen[5] = c6;
+            theChoosen[6] = c7;
+            theChoosen[7] = c8;
+            theChoosen[8] = c9;
+ 
+            String input;
+            Scanner inquire = new Scanner(System.in);
+            System.out.println("\nHere is your chosen cards:");
+            System.out.println("Card 1 = "+c1
+            + "\nCard 2 = "+c2
+            + "\nCard 3 = "+c3
+            + "\nCard 4 = "+c4
+            + "\nCard 5 = "+c5
+            + "\nCard 6 = "+c6
+            + "\nCard 7 = "+c7
+            + "\nCard 8 (Hidden 1) = "+c8
+            + "\nCard 9 (Hidden 2) = "+c9);
+            System.out.println("\nDoes everything look correct (Y/N)");
+            input = inquire.nextLine().toLowerCase();
+
+            // while (!input.equals("y") || !input.equals("n")){
+            while ((!input.matches("[yn]"))){
+                  System.out.print("A simple y or n will do ");
+                  input = inquire.nextLine().toLowerCase();
+                  System.out.println("input = "+input);
+            }
+
+            if (input.equals("y")){
+                  inquire.close();
+                  return theChoosen;
+            }
+                  
+            if(input.equals("n")){
+                  System.out.println("Ok, which card do you want to change: 1 2 3 4 5 6 7 8 9");
+                  System.out.print("Card Number: ");
+                  input = inquire.nextLine();
+                  int idiot = 0;
+                  while(!input.matches("[1-9]")){
+                        if(idiot==3) {
+                              System.out.println("*** Idiot Alert Triggered ***");
+                              idiot = 0;
+                        }
+                        System.out.println("Thats not a valid entry. Try again\n");
+                        System.out.print("Which card do you want to change:");
+                        input = inquire.nextLine();
+                        idiot++;
+                        // System.out.println("idiot = "+idiot);
+                  }
+                  if (input.equals("1")) theChoosen[0]= addCard();
+                  if (input.equals("2")) theChoosen[1]= addCard();
+                  if (input.equals("3")) theChoosen[2]= addCard();
+                  if (input.equals("4")) theChoosen[3]= addCard();
+                  if (input.equals("5")) theChoosen[4]= addCard();
+                  if (input.equals("6")) theChoosen[5]= addCard();
+                  if (input.equals("7")) theChoosen[6]= addCard();
+                  if (input.equals("8")) theChoosen[7]= addCard();
+                  if (input.equals("9")) theChoosen[8]= addCard();
+            }           
+            
+            System.out.print("Do any other changes need to be made? (Y/N) ");     
+            input = inquire.nextLine();
+            while ((!input.matches("[yn]"))){
+                  System.out.print("My patience is wearing thin");
+                  input = inquire.nextLine().toLowerCase();
+                  System.out.println("input = "+input);
+            }
+            if (input.equals("y")){
+                  theChoosen = checkInput(theChoosen[0],theChoosen[1],theChoosen[2],theChoosen[3],theChoosen[4],theChoosen[5],theChoosen[6],theChoosen[7],theChoosen[8]);
+            }
+
+            inquire.close();
+            return theChoosen;
+      }
+      
+      public static String[] checkInput(String c1,String c2,String c3,String c4,String c5,String c6,String c7) {
+            String[] theChoosen = new String[7];           
+            theChoosen[0] = c1;
+            theChoosen[1] = c2;
+            theChoosen[2] = c3;
+            theChoosen[3] = c4;
+            theChoosen[4] = c5;
+            theChoosen[5] = c6;
+            theChoosen[6] = c7;
+ 
+            String input;
+            Scanner inquire = new Scanner(System.in);
+            System.out.println("Here is your chosen cards:");
+            System.out.println("Card 1 = "+c1
+            + "\nCard 2 = "+c2
+            + "\nCard 3 = "+c3
+            + "\nCard 4 = "+c4
+            + "\nCard 5 = "+c5
+            + "\nCard 6 = "+c6
+            + "\nCard 7 = "+c7);
+            System.out.println("Does everything look correct (Y/N)");
+            input = inquire.nextLine().toLowerCase();
+
+            // while (!input.equals("y") || !input.equals("n")){
+            while ((!input.matches("[yn]"))){
+                  System.out.print("A simple y or n will do ");
+                  input = inquire.nextLine().toLowerCase();
+                  System.out.println("input = "+input);
+            }
+
+            if (input.equals("y")){
+                  inquire.close();
+                  return theChoosen;
+            }
+                  
+            if(input.equals("n")){
+                  System.out.println("Ok, which card do you want to change: 1 2 3 4 5 6 7 ");
+                  System.out.print("Card Number: ");
+                  input = inquire.nextLine();
+                  int idiot = 0;
+                  while(!input.matches("[1-9]")){
+                        if(idiot==3) {
+                              System.out.println("*** Idiot Alert Triggered ***");
+                              idiot = 0;
+                        }
+                        System.out.println("Thats not a valid entry. Try again\n");
+                        System.out.print("Which card do you want to change:");
+                        input = inquire.nextLine();
+                        idiot++;
+                        // System.out.println("idiot = "+idiot);
+                  }
+                  if (input.equals("1")) theChoosen[0]= addCard();
+                  if (input.equals("2")) theChoosen[1]= addCard();
+                  if (input.equals("3")) theChoosen[2]= addCard();
+                  if (input.equals("4")) theChoosen[3]= addCard();
+                  if (input.equals("5")) theChoosen[4]= addCard();
+                  if (input.equals("6")) theChoosen[5]= addCard();
+                  if (input.equals("7")) theChoosen[6]= addCard();
+                  // if (input.equals("8")) theChoosen[7]= addCard();
+                  // if (input.equals("9")) theChoosen[8]= addCard();
+            }           
+            
+            System.out.print("Do any other changes need to be made? (Y/N) ");     
+            input = inquire.nextLine();
+            while ((!input.matches("[yn]"))){
+                  System.out.print("My patience is wearing thin");
+                  input = inquire.nextLine().toLowerCase();
+                  System.out.println("input = "+input);
+            }
+            if (input.equals("y")){
+                  checkInput(theChoosen[0],theChoosen[1],theChoosen[2],theChoosen[3],theChoosen[4],theChoosen[5],theChoosen[6]);
+                  // checkInput(c1, c2, c3, c4, c5, c6, c7);
+            }
+
+            inquire.close();
+            return theChoosen;
+
+
+      }
       public static String formatCard(String card) {
             // check for empty value. Issue will be stopped fully by realCard
             //    this will just skip over the formatting process to avoid error.
@@ -115,7 +289,10 @@ public class volunteer {
             System.out.println(card1 + ", " + card2 + ", " + card3 + ", " + card4 + ", " + card5 + ", " + card6 + ", "
                         + card7 + "\n");
 
-            magician.magic(card1, card2, card3, card4, card5, card6, card7);
+            String[] picked = checkInput(card1, card2, card3, card4, card5, card6, card7);
+
+            magician.magic(picked[0], picked[1], picked[2], picked[3], picked[4], picked[5], picked[6]);
+            // magician.magic(card1, card2, card3, card4, card5, card6, card7);
 
             /*
              * magician[0] = card1; magician[1] = card2; magician[2] = card3; magician[3] =
@@ -123,6 +300,7 @@ public class volunteer {
              * 
              * return magician;
              */
+            drawnCard.close();
       }
 
       public static void /* String[] */ chooseCardsAssistant() {
@@ -214,8 +392,10 @@ public class volunteer {
              * +card5 + ", "+ card6 + ", "+ card7 + ", " +"*"+hiddenCard1 + ", "
              * +"*"+hiddenCard2 + "\n");
              */
-
-            assistant.assist(card1, card2, card3, card4, card5, card6, card7, hiddenCard1, hiddenCard2);
+            String[] picked = checkInput(card1, card2, card3, card4, card5, card6, card7, hiddenCard1, hiddenCard2);
+            // System.out.println("Passing in picked");
+            assistant.assist(picked[0], picked[1], picked[2], picked[3], picked[4], picked[5], picked[6], picked[7], picked[8]);
+            // assistant.assist(card1, card2, card3, card4, card5, card6, card7, hiddenCard1, hiddenCard2);
 
             /*
              * assistant[0] = card1; assistant[1] = card2; assistant[2] = card3;
@@ -225,6 +405,6 @@ public class volunteer {
              * 
              * return assistant;
              */
-
+            drawnCard.close();
       }
 }
